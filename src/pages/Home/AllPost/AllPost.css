@@ -1,0 +1,39 @@
+
+
+#btn-style {
+    border-width: medium;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius:40px ;
+    font-size: 16px;
+    color: aliceblue;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+#btn-style:hover {
+    box-shadow: 0 0 5px cyan,
+    0 0  25px cyan, 0 0 cyan,
+    0 0 25px cyan, 0 0 25px cyan
+}
+
+.pagination .selected {
+    background-color: #0ef;
+    color: black;
+}
+.circle-btn {
+    border-width: medium;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius:40px ;
+    font-size: 16px;
+    color: aliceblue;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.circle-btn:hover {
+    box-shadow: 0 0 5px cyan,
+    0 0  25px cyan, 0 0 cyan,
+    0 0 25px cyan, 0 0 25px cyan
+}
