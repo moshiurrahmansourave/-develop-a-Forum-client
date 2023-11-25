@@ -18,6 +18,7 @@ const AllPost = () => {
 
     useEffect(()=>{
         fetch(`http://localhost:5001/allPost?page=${currentPage}&size=${itemsPerPage}`)
+        
         .then(res => res.json())
         .then(data => setPosts(data))
     }, [currentPage,itemsPerPage])

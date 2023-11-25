@@ -25,7 +25,7 @@ const Registation = () => {
 
 
 //login site    
-    const{singIn, createuser} = useContext(AuthContext)
+    const{singIn, createuser, updateUserProfile} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -89,13 +89,17 @@ const onSubmit = (data) => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser)
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Registration successful",
-            showConfirmButton: false,
-            timer: 1500
-          });
+        updateUserProfile(data.name, data.photoUrl)
+        .then(() =>{
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Registration successful",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        })
+       
           navigate(from, {replace:true})
 
       })
