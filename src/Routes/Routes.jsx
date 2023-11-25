@@ -36,7 +36,8 @@ import Registation from "../pages/Registation/Registation";
         {
           path: '/register',
           element: <Registation></Registation>
-        }
+        },
+        
       ]
     },
   ]);

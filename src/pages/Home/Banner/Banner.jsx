@@ -10,7 +10,7 @@ const Banner = () => {
 
     React.useEffect(() => {
         const typed = new Typed(el.current, {
-          strings: ['<i>Hello</i> Welcome', 'WELCOME TO OUR WEBSITE'],
+          strings: ['<i>Hello</i> Friends', 'WELCOME TO OUR WEBSITE','Join Us For More'],
           typeSpeed: 70,
           backSpeed:50,
           loop:true
@@ -28,7 +28,7 @@ const Banner = () => {
            <section className="home lg:flex-row flex-col-reverse">
                 
                 <div className="home-container">
-                    <h3 className="">Hello, It's Me</h3>
+                    <h3 className="">Hello, Friends</h3>
                     <h1 className="">Moshiur Rahman</h1>
                     <h3><span ref={el}></span></h3>
                     <p>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Ex, praesentium!</p>

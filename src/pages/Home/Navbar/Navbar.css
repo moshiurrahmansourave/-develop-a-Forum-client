@@ -27,6 +27,12 @@
     0 0 25px cyan, 0 0 25px cyan
 }
 
+#drop-btn:hover {
+    box-shadow: 0 0 5px cyan,
+    0 0  25px cyan, 0 0 cyan,
+    0 0 25px cyan, 0 0 25px cyan
+}
+
 .navbar li{
     display: inline-block;
     font-size: 15px;

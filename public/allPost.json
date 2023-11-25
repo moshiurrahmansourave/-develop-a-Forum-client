@@ -1,7 +1,7 @@
 [
     {
       "author_name": "John Doe",
-      "author_image":"https://st2.depositphotos.com/1004174/7566/i/450/depositphotos_75664411-stock-photo-programming-concept.jpg",
+      "post_image":"https://st2.depositphotos.com/1004174/7566/i/450/depositphotos_75664411-stock-photo-programming-concept.jpg",
       "post_title": "Exploring the javascript",
       "description": "A journey through the cosmos, unraveling mysteries of space.",
       "tags": ["space", "science", "astronomy"],
@@ -11,7 +11,7 @@
     },
     {
       "author_name": "Emily Johnson",
-      "author_image":"https://img.freepik.com/premium-photo/programming-web-pages-with-html-css-code-desktop-computer_671359-114.jpg",
+      "post_image":"https://img.freepik.com/premium-photo/programming-web-pages-with-html-css-code-desktop-computer_671359-114.jpg",
       "post_title": "Exploring the html",
       "description": "Delve into the world of culinary arts and exquisite recipes.",
       "tags": ["food", "recipes", "cooking"],
@@ -21,7 +21,7 @@
     },
     {
       "author_name": "Alex Smith",
-      "author_image":"https://repository-images.githubusercontent.com/274497109/b01ce900-d758-11ea-8262-0a3c073f6f12",
+      "post_image":"https://repository-images.githubusercontent.com/274497109/b01ce900-d758-11ea-8262-0a3c073f6f12",
       "post_title": "Fitness Journey: From Couch Potato to Marathon Runner",
       "description": "A personal account of transformation through fitness and endurance.",
       "tags": ["fitness", "health", "running"],
@@ -31,7 +31,7 @@
     },
     {
       "author_name": "Sophia Brown",
-      "author_image":"https://c8.alamy.com/comp/TWA0T9/man-sitting-on-globe-with-the-laptop-on-top-of-the-world-TWA0T9.jpg",
+      "post_image":"https://c8.alamy.com/comp/TWA0T9/man-sitting-on-globe-with-the-laptop-on-top-of-the-world-TWA0T9.jpg",
       "post_title": "The World of Finance",
       "description": "Insights into financial markets and investment strategies.",
       "tags": ["finance", "investing", "economics"],
@@ -41,7 +41,7 @@
     },
     {
       "author_name": "Daniel Clark",
-      "author_image":"https://media.istockphoto.com/id/1469706272/photo/web-design-coding-and-asian-man-with-a-computer-for-programming-a-website-at-night-cyber.webp?b=1&s=170667a&w=0&k=20&c=7_2joeyiBtZQ_y-OhD-qxIh5cgeI5MXqgk87O7tjNZs=",
+      "post_image":"https://media.istockphoto.com/id/1469706272/photo/web-design-coding-and-asian-man-with-a-computer-for-programming-a-website-at-night-cyber.webp?b=1&s=170667a&w=0&k=20&c=7_2joeyiBtZQ_y-OhD-qxIh5cgeI5MXqgk87O7tjNZs=",
       "post_title": "Discovering Ancient Civilizations",
       "description": "Unearthing the secrets of past civilizations and their cultures.",
       "tags": ["history", "archaeology", "culture"],
@@ -51,7 +51,7 @@
     },
     {
       "author_name": "Mia Garcia",
-      "author_image":"https://media.istockphoto.com/id/1487030097/photo/low-code-development-system-concept.webp?b=1&s=170667a&w=0&k=20&c=iPXusng-3FL7UPyRhrTQHBysT9gkebGYHdI36jTd9b8=",
+      "post_image":"https://media.istockphoto.com/id/1487030097/photo/low-code-development-system-concept.webp?b=1&s=170667a&w=0&k=20&c=iPXusng-3FL7UPyRhrTQHBysT9gkebGYHdI36jTd9b8=",
       "post_title": "Art of Mindfulness",
       "description": "Practices and insights for achieving mental tranquility and focus.",
       "tags": ["mindfulness", "meditation", "mental health"],
@@ -61,7 +61,7 @@
     },
     {
       "author_name": "Liam Wilson",
-      "author_image":"https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/279651185/original/5263a615ded7fe52a5970719283fe98d5cd586fb/fix-your-website-code-like-html-css-or-javascript.jpeg",
+      "post_image":"https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/279651185/original/5263a615ded7fe52a5970719283fe98d5cd586fb/fix-your-website-code-like-html-css-or-javascript.jpeg",
       "post_title": "Adventure Travel: Tales from the Road",
       "description": "Adventurous tales and experiences from exploring different places.",
       "tags": ["travel", "adventure", "exploration"],
@@ -71,7 +71,7 @@
     },
     {
       "author_name": "Ella Martinez",
-      "author_image":"https://www.c-sharpcorner.com/article/what-and-why-reactjs/Images/React%20Properties.jpg",
+      "post_image":"https://www.c-sharpcorner.com/article/what-and-why-reactjs/Images/React%20Properties.jpg",
       "post_title": "Fashion Trends: What's In and What's Out",
       "description": "The latest fashion trends and style insights.",
       "tags": ["fashion", "style", "trends"],
@@ -81,7 +81,7 @@
     },
     {
       "author_name": "James Thompson",
-      "author_image":"https://refine-web.imgix.net/blog/2023-05-09-material-ui-modal/social.png?w=800",
+      "post_image":"https://refine-web.imgix.net/blog/2023-05-09-material-ui-modal/social.png?w=800",
       "post_title": "Technology Innovations: Beyond the Horizon",
       "description": "Exploring cutting-edge technology and futuristic innovations.",
       "tags": ["technology", "innovation", "future"],
@@ -91,7 +91,7 @@
     },
     {
       "author_name": "Ava White",
-      "author_image":"https://img.fortawesome.com/1ce05b4b/open-graph-general.png",
+      "post_image":"https://img.fortawesome.com/1ce05b4b/open-graph-general.png",
       "post_title": "Wildlife Conservation: Preserving Nature's Wonders",
       "description": "Efforts and strategies for conserving natural habitats and wildlife.",
       "tags": ["conservation", "environment", "animals"],
@@ -101,7 +101,7 @@
     },
     {
       "author_name": "Noah Anderson",
-      "author_image":"https://www.shutterstock.com/image-photo/python-programming-language-programing-workflow-260nw-1846209262.jpg",
+      "post_image":"https://www.shutterstock.com/image-photo/python-programming-language-programing-workflow-260nw-1846209262.jpg",
       "post_title": "The Power of Literature",
       "description": "Exploring the impact of literature on society and human emotions.",
       "tags": ["literature", "books", "reading"],
@@ -111,7 +111,7 @@
     },
     {
       "author_name": "Isabella Garcia",
-      "author_image":"https://c8.alamy.com/comp/R568HR/stream-of-machine-consciousness-R568HR.jpg",
+      "post_image":"https://c8.alamy.com/comp/R568HR/stream-of-machine-consciousness-R568HR.jpg",
       "post_title": "Healthy Living: Balancing Mind and Body",
       "description": "Tips and practices for a balanced and healthy lifestyle.",
       "tags": ["health", "wellness", "balance"],
@@ -121,7 +121,7 @@
     },
     {
       "author_name": "William Brown",
-      "author_image":"https://www.techrepublic.com/wp-content/uploads/2023/08/tr0082323-featuredimage-top-10-generative-ai-related-skills-and-hires-in-2023.jpg",
+      "post_image":"https://www.techrepublic.com/wp-content/uploads/2023/08/tr0082323-featuredimage-top-10-generative-ai-related-skills-and-hires-in-2023.jpg",
       "post_title": "Entrepreneurship: Building a Startup from Scratch",
       "description": "Insights and advice for aspiring entrepreneurs in startup creation.",
       "tags": ["entrepreneurship", "business", "startups"],
@@ -131,7 +131,7 @@
     },
     {
       "author_name": "Olivia Taylor",
-      "author_image":"https://images.picxy.com/cache/2021/6/14/78fa8b46f742cb2246ef591a9176b8ce.jpg",
+      "post_image":"https://images.picxy.com/cache/2021/6/14/78fa8b46f742cb2246ef591a9176b8ce.jpg",
       "post_title": "Music and Emotions",
       "description": "Exploring the relationship between music and human emotions.",
       "tags": ["music", "emotions", "expression"],
@@ -141,7 +141,7 @@
     },
     {
       "author_name": "Benjamin Moore",
-      "author_image":"https://www.shutterstock.com/image-photo/digital-technology-software-development-concept-600nw-2111828198.jpg",
+      "post_image":"https://www.shutterstock.com/image-photo/digital-technology-software-development-concept-600nw-2111828198.jpg",
       "post_title": "Space Exploration: The Next Frontier",
       "description": "Future prospects and challenges in the exploration of outer space.",
       "tags": ["space", "exploration", "future"],
@@ -151,7 +151,7 @@
     },
     {
       "author_name": "Emma Walker",
-      "author_image":"https://usa.bootcampcdn.com/wp-content/uploads/sites/106/2020/12/tes_gen_blog_code6-800x412.jpg",
+      "post_image":"https://usa.bootcampcdn.com/wp-content/uploads/sites/106/2020/12/tes_gen_blog_code6-800x412.jpg",
       "post_title": "The Psychology of Happiness",
       "description": "Insights into the psychological aspects of achieving happiness.",
       "tags": ["psychology", "happiness", "wellbeing"],
@@ -161,7 +161,7 @@
     },
     {
       "author_name": "Jacob Lee",
-      "author_image":"https://image.shutterstock.com/image-vector/software-web-development-programming-concept-260nw-1122339353.jpg",
+      "post_image":"https://image.shutterstock.com/image-vector/software-web-development-programming-concept-260nw-1122339353.jpg",
       "post_title": "Sportsmanship: Beyond Competition",
       "description": "Ethical aspects and lessons in sports beyond the competitive arena.",
       "tags": ["sports", "competition", "ethics"],
@@ -171,7 +171,7 @@
     },
     {
       "author_name": "Avery Cooper",
-      "author_image":"https://img.freepik.com/premium-photo/programming-background-with-person-working-with-codes-computer_23-2150010151.jpg",
+      "post_image":"https://img.freepik.com/premium-photo/programming-background-with-person-working-with-codes-computer_23-2150010151.jpg",
       "post_title": "Digital Art: Creativity in Pixels",
       "description": "Exploring the realm of art through digital means and creativity.",
       "tags": ["art", "digital", "creativity"],
