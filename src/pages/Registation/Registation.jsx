@@ -5,13 +5,13 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import { app } from "../../firebase/firebase.config";
+import useAxiosPublic from "../../components/hooks/useAxiosPublic";
+import useAuth from "../../components/hooks/useAuth";
 
 
 
 const Registation = () => {
-
+    const axiosPublic = useAxiosPublic()
     const [isActive, setIsActive] = useState(false);
     const handleRegisterClick = e => {
         e.preventDefault()
@@ -29,33 +29,33 @@ const Registation = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
-
     const from = location.state?.from?.pathname || "/";
 //login end
 
 
 
 // singUp site
-const { register, formState: { errors }, handleSubmit, } = useForm();
+const { register,reset, formState: { errors }, handleSubmit, } = useForm();
 // singUp end
 
-
-
    //login with google
+
+   const {googleSingIn} = useAuth()
+    
    const handleGoogleSingIn = () =>{
-    signInWithPopup(auth, googleProvider)
-    .then(result =>{
-        const user =result.user;
-        console.log(user)
-        Swal.fire('Login successfully')
-        navigate(location?.state ? location.state :
-            '/')
-    })
-    .catch(error =>{
-        console.error(error)
-    })
+    googleSingIn()
+        .then(result => {
+            console.log(result.user)
+            const userInfo ={
+                email: result.user?.email,
+                name: result.user?.displayName
+            }
+            axiosPublic.post('/users',userInfo)
+            .then(res =>{
+                console.log(res.data)
+                navigate('/')
+            })
+        })
 
 }
 
@@ -91,13 +91,27 @@ const onSubmit = (data) => {
         console.log(loggedUser)
         updateUserProfile(data.name, data.photoUrl)
         .then(() =>{
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Registration successful",
-                showConfirmButton: false,
-                timer: 1500
-              });
+            // create user entry in database
+            //set user entry on the data base
+            const userInfo = {
+                name: data.name,
+                email: data.email
+              }
+            axiosPublic.post('/users', userInfo)
+           .then(res => {
+                if (res.data.insertedId) {
+                  console.log('user added to the database')
+                  reset();
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "User login successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate('/')
+                }
+              })
         })
        
           navigate(from, {replace:true})

@@ -15,7 +15,7 @@ const PostCard = ({post}) => {
         author_name, 
         author_image,tags, time, post_image, down_votes_count, up_votes_count, _id} = post
     return (
-        <div data-aos="fade-up" className="relative flex flex-col rounded-xl backdrop-blur-md bg-white/10  text-white shadow-md a" >
+        <div data-aos="fade-up" className="relative flex flex-col rounded-xl backdrop-blur-md bg-white/10  text-white shadow-md " >
   <figure><img  className="rounded-t-lg lg:h-80 h-full w-full" src={post_image} alt="car!"/></figure>
   <div className=" flex flex-col gap-3 px-2 pb-6 " >
     

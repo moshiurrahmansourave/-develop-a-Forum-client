@@ -21,7 +21,7 @@ const Navbar = () => {
   const navLink = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/membership'> Membership</NavLink></li>
-    <li><NavLink to='/bell'>Announcements<FaRegBell className="text-2xl" /> </NavLink></li>
+    <li><NavLink to='/announcement'>Announcements<FaRegBell className="text-2xl" /> </NavLink></li>
   </>
 
   return (
@@ -75,7 +75,7 @@ const Navbar = () => {
                       </p>
                     </a>
                   </li>
-                  <li className="hover:bg-sky-500"><a>Dashboard</a></li>
+                  <li className="hover:bg-sky-500"><Link to="/dashboard">Dashboard</Link></li>
                   <li><a onClick={handleLogOut} className=" text-white hover:bg-sky-500">Sing Out</a></li>
                 </ul>
               </div>
