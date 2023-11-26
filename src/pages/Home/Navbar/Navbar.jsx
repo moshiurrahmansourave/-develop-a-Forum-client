@@ -4,12 +4,15 @@ import '../Navbar/Navbar.css'
 import { FaRegBell } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import useAnnounce from "../../../components/hooks/useAnnounce";
 
 
 
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
+
+  const [announce] = useAnnounce()
 
   const handleLogOut = () => {
     logOut()
@@ -21,7 +24,7 @@ const Navbar = () => {
   const navLink = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/membership'> Membership</NavLink></li>
-    <li><NavLink to='/announcement'>Announcements<FaRegBell className="text-2xl" /> </NavLink></li>
+    <li><NavLink to='/announcement'>Announcements<FaRegBell className="text-2xl text-cyan-400" /><div className=" mb-3 ml-36 font-semibold text-cyan-400 text-lg absolute">+{announce?.length}</div> </NavLink></li>
   </>
 
   return (

@@ -14,9 +14,9 @@ const AnnounceCard = ({ announce }) => {
                 <h1 className="text-2xl font-semibold">{name}</h1>
             </div>
             <div className="text-center">
-            <h2 className="text-lg font-semibold underline my-3">{title}</h2>
+            <h2 className="text-xl font-semibold underline my-3">{title}</h2>
             </div>
-            <p>{description}</p>
+            <p className="text-lg">{description}</p>
         </div>
        </div>
     );

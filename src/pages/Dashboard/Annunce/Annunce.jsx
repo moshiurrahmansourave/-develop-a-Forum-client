@@ -58,7 +58,7 @@ const Annunce = () => {
                         </label>
                         <input
                             type="text"
-                            placeholder="Author Image"
+                            placeholder="Author name"
                             {...register('name', {required:true})}
                             className="input input-bordered w-full " />
                     </div>
