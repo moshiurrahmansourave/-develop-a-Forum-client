@@ -31,14 +31,14 @@ const Dashboard = () => {
                       Manage Users</NavLink>
                  </li>
                  <li>
-                     <NavLink to="/dashboard/reported">
-                     <FaList />
-                     Reported Comment</NavLink>
-                 </li>
-                 <li>
                      <NavLink to="/dashboard/announce">
                      <FaMoneyCheck />
                      Make Announcement</NavLink>
+                 </li>
+                 <li>
+                     <NavLink to="/dashboard/reported">
+                     <FaList />
+                     Reported Comment</NavLink>
                  </li>
              
                      </>

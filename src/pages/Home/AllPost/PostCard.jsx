@@ -20,13 +20,22 @@ const PostCard = ({post}) => {
   <div className=" flex flex-col gap-3 px-2 pb-6 " >
     
     <h1 className="text-3xl border-b-2 border-t-2 mt-5 border-sky-300 py-2">{post_title}</h1>
-    <div className="flex gap-3">
-    <div className="avatar">
+    <div className="flex gap-3 items-center">
+    {
+      author_image === null ? <div className="avatar">
+      <div className="w-10 mask mask-squircle">
+        <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" />
+      </div>
+    </div> 
+      :
+      <div className="avatar">
   <div className="w-10 mask mask-squircle">
     <img src={author_image} />
   </div>
 </div>
+    }
     <h2 className="text-2xl font-bold">{author_name}</h2>
+    <p className="font-medium">tag : {tags}</p>
     </div>
     <p>Post Date: {time}</p>
 

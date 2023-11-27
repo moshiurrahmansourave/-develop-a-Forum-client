@@ -3,13 +3,14 @@ import useAxiosPublic from "../../../components/hooks/useAxiosPublic";
 
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../components/hooks/useAxiosSecure";
+import useAuth from "../../../components/hooks/useAuth";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const AddPost = () => {
-
+    const {user} = useAuth()
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure()
@@ -27,10 +28,12 @@ const AddPost = () => {
             // now send the menu item data to the server with the image url
             const post = {
                 author_name: data.name,
+                author_image: user?.photoURL,
                 email: data.email,
                 post_title: data.title,
-                tag: data.tag,
                 description: data.discription,
+                tags: data.tags,
+                time: data.time,
                 post_image: res.data.data.display_url,
                 up_votes_count: 0,
                 down_votes_count: 0
@@ -77,6 +80,7 @@ const AddPost = () => {
                         <input
                             type="text"
                             placeholder="Author email"
+                            defaultValue={user?.email}
                             {...register('email', {required:true})}
                             className="input input-bordered w-full " />
                         </div>
@@ -100,7 +104,7 @@ const AddPost = () => {
                             <label className="label">
                                 <span className="label-text text-white underline">Tag</span>
                             </label>
-                            <select defaultValue={'default'} {...register("tag" , {required:true})}
+                            <select defaultValue={'default'} {...register("tags" , {required:true})}
                                 className="select select-bordered w-full ">
                                 <option disabled value={'default'}>Select a tag</option>
                                 <option value="html">html</option>
@@ -125,9 +129,12 @@ const AddPost = () => {
 
                     </div>
 
-                    {/* image fild */}
-                    <div className="flex gap-10 mt-8 ">
-                       
+                    {/* image and date fild */}
+                    <div className="flex gap-10 mt-8 items-center">
+                    <div className="">
+            <p className="text-xl font-bold underline text-white">Date</p>
+             <input type="date" {...register('time' , {required:true})} placeholder="Type here" className="input rounded-none input-bordered input-md w-full max-w-xs" required />
+           </div>
                        <div>
                          {/* file niput post image */}
                         <p className="text-lg text-white "> Post image</p>
