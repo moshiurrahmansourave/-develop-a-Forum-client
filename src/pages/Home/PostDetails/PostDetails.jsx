@@ -1,43 +1,44 @@
 import axios from "axios";
 import { useState } from "react";
 import { FaShare, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 
 
 
 const PostDetails = () => {
+  const [disabledButtons, setDisabledButtons] = useState([]);
+
     const detailsData = useLoaderData()
     const {author_name, post_image, author_image, post_title, description, time, comments_count, votes_count,_id} = detailsData;
 
 
 //like related work mama
-const [isLiked, setIsLiked] = useState(false);
-const [isDisliked, setIsDisliked] = useState(false);
 
-const handleLike = async () => {
-    try {
-      const response = await axios.post(`http://localhost:5001/allPost/${_id}/like`);
-      if (response.status === 200) {
-        setIsLiked(true);
-        // Update other relevant data or UI based on the like
-      }
-    } catch (error) {
-      console.error('Error liking post:', error);
-    }
-  };
 
-  const handleDislike = async () => {
-    try {
-      const response = await axios.post(`http://localhost:5001/allPost/${_id}/dislike`);
-      if (response.status === 200) {
-        setIsDisliked(true);
-        // Update other relevant data or UI based on the dislike
-      }
-    } catch (error) {
-      console.error('Error disliking post:', error);
-    }
-  };
+const handleLike = async (id) => {
+
+  if (!disabledButtons.includes(id)) {
+    setDisabledButtons([...disabledButtons, id]);
+  }
+
+  console.log(id);
+  try {
+    await axios.put(`http://localhost:5001/UpVote/${id}`);
+  
+  } catch (error) {
+    console.error("Error upvoting post:", error);
+  }
+};
+const handleDisLike = async (id) => {
+  console.log(id);
+  try {
+    await axios.put(`http://localhost:5001/downVote/${id}`);
+    
+  } catch (error) {
+    console.error("Error upvoting post:", error);
+  }
+};
 
 
     return (
@@ -92,9 +93,12 @@ const handleLike = async () => {
   </div>
 </dialog>
                         
-                        <button onClick={handleLike} disabled={isLiked} className="btn"><FaThumbsUp className="text-2xl" /></button>
+                        {/* <button disabled={isButtonDisabled} onClick={() => handleLike(_id)} className="btn"><FaThumbsUp className="text-2xl" /></button> */}
+                        <button onClick={() => handleLike(_id)} disabled={disabledButtons.includes(1)}>
+          {disabledButtons.includes(1) ? 'Liked' : 'Like'}
+        </button>
 
-                        <button onClick={handleDislike} disabled={isDisliked} className="btn"><FaThumbsDown className="text-2xl" /></button>
+                        <button onClick={() => handleDisLike(_id)} className="btn"><FaThumbsDown className="text-2xl" /></button>
 
                         <button className="btn"><FaShare className="text-2xl" /></button>
                        </div>

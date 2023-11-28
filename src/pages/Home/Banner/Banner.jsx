@@ -38,14 +38,12 @@ const Banner = () => {
                         <a href="#"><FaInstagram /></a>
                         <a href="#"><FaTwitter /></a>
                     </div>
-                    <div className='flex'>
-                        
+
+                    {/* <div className='flex'>
                     <input type="text"  placeholder="Type here" className="input rounded-none text-black w-full max-w-xs" />
-                   
                     <button id='btn-box' className="btn rounded-none "><div className='flex gap-2'> <FaSearch></FaSearch> Search</div></button>
-                   
-                    
-                    </div>
+                    </div> */}
+
                 </div>
                 <div className='lg:w-[400px]'> 
             <img src="https://aptitude8.com/hubfs/flywheel%20v2.png" alt="" />
