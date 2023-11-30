@@ -64,7 +64,7 @@ const AllPost = () => {
         const searchText = searchFild.value;
         console.log(searchText)
         if (searchText.length > 0) {
-            const newData = posts.filter(item => item.tags == searchText)
+            const newData = posts?.filter(item => item.tags == searchText)
             console.log(posts.tags)
 
             if (newData) {
@@ -82,10 +82,14 @@ const AllPost = () => {
         <div>
             
         <div className="flex justify-center -mt-12 mb-5">
-            <div className='flex'>
+            
+           <div className="text-center">
+           <div className='flex'>
                     <input id="Search-fild" type="text"  placeholder="Type here" className="input rounded-none rounded-l-3xl text-black w-full max-w-xs" />
                     <button onClick={handleSearch} id='btn-box' className="btn rounded-none "><div className='flex gap-2'> <FaSearch></FaSearch> Search</div></button>
             </div>
+            <p className="text-white text-lg">Popular Topic : <span className="text-cyan-400">html, css, javascript</span></p>
+           </div>
             <button id="btn-style" className="btn btn-outline" onClick={handleSortByPopularity}>
           Sort by Vote
         </button>

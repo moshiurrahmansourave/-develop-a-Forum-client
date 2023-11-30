@@ -32,32 +32,6 @@ const ManageUser = () => {
         })
     }
 
-    const handleDeleteUser = user =>{
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
-            if (result.isConfirmed) {
-           
-            axiosSecure.delete(`users/${user._id}`)
-            .then(res => {
-                if(res.data.deletedCount>0){
-                       Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
-              refetch()
-                }
-            })
-            }
-          });
-    }
 
     return (
         <div>
@@ -95,11 +69,13 @@ const ManageUser = () => {
               </button>}
             </td>
             <td>
-            <button
-              onClick={()=>handleDeleteUser(user)}
-              className="btn btn-sm bg-white text-red-700 border-red-600 ">
-              Delete
-              </button>
+            { 
+              user?.badge === 'bronze' ? 'User' 
+              :
+              <p className="text-cyan-400">
+                Membership
+              </p>
+            }
             </td>
           </tr>)
       }

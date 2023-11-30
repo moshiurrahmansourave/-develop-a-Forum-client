@@ -5,7 +5,6 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Membership from "../pages/Membership/Membership";
 import PostDetails from "../pages/Home/PostDetails/PostDetails";
-import Login from "../pages/Login/Login";
 import Registation from "../pages/Registation/Registation";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
@@ -35,7 +34,7 @@ import Payment from "../pages/Membership/Payment";
         },
         {
             path: '/membership',
-            element: <Membership></Membership>
+            element: <PrivateRoute><Membership></Membership></PrivateRoute>
         },
         {
           path:'payment',
@@ -43,7 +42,7 @@ import Payment from "../pages/Membership/Payment";
         },
         {
           path: '/postDetails/:id',
-          element: <PostDetails></PostDetails>,
+          element: <PrivateRoute><PostDetails></PostDetails></PrivateRoute>,
           loader:({params}) => fetch(`http://localhost:5001/allPost/${params.id}`)
         },
         {
@@ -64,19 +63,19 @@ import Payment from "../pages/Membership/Payment";
         //user routs
         {
           path: 'myProfile',
-          element: <MyProfile></MyProfile>
+          element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
         },
         {
           path:'addPost',
-          element: <AddPost></AddPost>
+          element: <PrivateRoute><AddPost></AddPost></PrivateRoute>
         },
         {
           path:'myPost',
-          element: <MyPost></MyPost>
+          element: <PrivateRoute> <MyPost></MyPost></PrivateRoute>
         },
         {
           path:'postComments/:id',
-          element: <MyPostComment></MyPostComment>
+          element: <PrivateRoute><MyPostComment></MyPostComment></PrivateRoute>
           
         },
         

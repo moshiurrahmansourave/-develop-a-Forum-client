@@ -1,0 +1,14 @@
+.homefo {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 25px 15px;
+
+
+}

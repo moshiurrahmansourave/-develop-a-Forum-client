@@ -95,7 +95,9 @@ const onSubmit = (data) => {
             //set user entry on the data base
             const userInfo = {
                 name: data.name,
-                email: data.email
+                photoUrl: data.photoUrl,
+                email: data.email,
+                badge: 'bronze'
               }
             axiosPublic.post('/users', userInfo)
            .then(res => {
@@ -133,6 +135,7 @@ const onSubmit = (data) => {
                 </div>
                 <span>or use your email for registration</span>
                 <input type="text" {...register("name", { required: true })}  placeholder="Name" />
+                <input type="text" {...register("photoUrl", { required: true })}  placeholder="photoUrl" />
                 <input type="email" {...register("email", { required: true })} name="email" placeholder="email" />
                
                 <input type="password" {...register("password", { pattern: /(?=.*[A-Z])(?=.*[0-9])(?=.*[A-Z])/ }, { required: true, minLength: 6 })} name="password" placeholder="password" />

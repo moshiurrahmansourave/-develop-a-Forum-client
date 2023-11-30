@@ -39,7 +39,13 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
+          <div className="flex">
+          <img className="w-14  rounded-full" src="https://i.ibb.co/0jyrXKF/attachment-85388280.jpg" alt="" />
+          <div>
           <a id="logo" className="btn btn-ghost normal-case text-xl">FORUM US</a>
+          </div>
+          </div>
+          
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -78,7 +84,7 @@ const Navbar = () => {
                       </p>
                     </a>
                   </li>
-                  <li className="hover:bg-sky-500"><Link to="/dashboard">Dashboard</Link></li>
+                  <li className="hover:bg-sky-500"><Link to="/dashboard/contact">Dashboard</Link></li>
                   <li><a onClick={handleLogOut} className=" text-white hover:bg-sky-500">Sing Out</a></li>
                 </ul>
               </div>
