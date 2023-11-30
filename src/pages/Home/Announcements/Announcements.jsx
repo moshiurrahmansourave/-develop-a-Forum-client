@@ -6,7 +6,7 @@ const Announcements = () => {
     const [allAnnounce, setAllannounce] = useState([])
     console.log(allAnnounce)
     useEffect(()=>{
-        fetch('http://localhost:5001/announce')
+        fetch('https://assignment-12-final-server-three.vercel.app/announce')
         .then(res =>res.json())
         .then(data => setAllannounce(data))
     },[])

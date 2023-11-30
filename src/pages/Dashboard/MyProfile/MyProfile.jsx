@@ -34,7 +34,7 @@ const MyProfile = () => {
     </div> 
       :
       <div className="avatar">
-  <div className="  mask mask-squircle">
+  <div className=" lg:w-52 mask mask-squircle">
     <img src={user?.photoURL} />
   </div>
 </div>

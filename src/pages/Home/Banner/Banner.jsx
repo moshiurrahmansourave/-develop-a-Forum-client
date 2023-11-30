@@ -29,9 +29,9 @@ const Banner = () => {
                 
                 <div className="home-container">
                     <h3 className="">Hello, Friends</h3>
-                    <h1 className="">Moshiur Rahman</h1>
+                    <h1 className="">Comunity Forum</h1>
                     <h3><span ref={el}></span></h3>
-                    <p>Lorem ipsum dolor sit amet consectetur <br /> adipisicing elit. Ex, praesentium!</p>
+                    <p>Meet other Ama users like you. Get answers <br /> & discover new ways to use Ama !</p>
                     <div className="home-sci">
                         <a href="#"><FaFacebookF /></a>
                         <a href="#"><FaTiktok /></a>
@@ -39,10 +39,7 @@ const Banner = () => {
                         <a href="#"><FaTwitter /></a>
                     </div>
 
-                    {/* <div className='flex'>
-                    <input type="text"  placeholder="Type here" className="input rounded-none text-black w-full max-w-xs" />
-                    <button id='btn-box' className="btn rounded-none "><div className='flex gap-2'> <FaSearch></FaSearch> Search</div></button>
-                    </div> */}
+                   
 
                 </div>
                 <div className='lg:w-[400px]'> 

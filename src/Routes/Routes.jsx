@@ -30,7 +30,7 @@ import Payment from "../pages/Membership/Payment";
         {
             path: '/',
             element: <Home></Home>,
-            loader:() => fetch('http://localhost:5001/allPostCount')
+            loader:() => fetch('https://assignment-12-final-server-three.vercel.app/allPostCount')
         },
         {
             path: '/membership',
@@ -43,7 +43,7 @@ import Payment from "../pages/Membership/Payment";
         {
           path: '/postDetails/:id',
           element: <PrivateRoute><PostDetails></PostDetails></PrivateRoute>,
-          loader:({params}) => fetch(`http://localhost:5001/allPost/${params.id}`)
+          loader:({params}) => fetch(`https://assignment-12-final-server-three.vercel.app/allPost/${params.id}`)
         },
         {
           path: '/register',

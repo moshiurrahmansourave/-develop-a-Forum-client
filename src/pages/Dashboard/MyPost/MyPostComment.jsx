@@ -15,7 +15,7 @@ const MyPostComment = () => {
     
   
      useEffect(()=>{
-      fetch(`http://localhost:5001/allPost/${params.id}`)
+      fetch(`https://assignment-12-final-server-three.vercel.app/allPost/${params.id}`)
       .then(res => res.json())
       .then(data => setAllData(data))
      },[params])
@@ -25,7 +25,7 @@ const MyPostComment = () => {
 
         const fetchData = async () => {
             try { 
-                await axios.get(`http://localhost:5001/allPost-comments/${params.id}`)
+                await axios.get(`https://assignment-12-final-server-three.vercel.app/allPost-comments/${params.id}`)
                 .then((res) => {
                   console.log(res.data);
       

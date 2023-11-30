@@ -21,7 +21,7 @@ const AllPost = () => {
     const pages = [...Array(numberOfPages).keys()]
 
     useEffect(()=>{
-        fetch(`http://localhost:5001/allPost?page=${currentPage}&size=${itemsPerPage}`)
+        fetch(`https://assignment-12-final-server-three.vercel.app/allPost?page=${currentPage}&size=${itemsPerPage}`)
         
         .then(res => res.json())
         .then(data => setPosts(data))

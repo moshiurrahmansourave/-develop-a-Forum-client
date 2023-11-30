@@ -32,7 +32,7 @@ const handleLike = async (id) => {
   setIsLiked(true);
   console.log(id);
   try {
-    await axios.put(`http://localhost:5001/UpVote/${id}`);
+    await axios.put(`https://assignment-12-final-server-three.vercel.app/UpVote/${id}`);
   
   } catch (error) {
     console.error("Error upvoting post:", error);
@@ -44,7 +44,7 @@ const handleDisLike = async (id) => {
   setDisIsLiked(true);
   console.log(id);
   try {
-    await axios.put(`http://localhost:5001/downVote/${id}`);
+    await axios.put(`https://assignment-12-final-server-three.vercel.app/downVote/${id}`);
     
   } catch (error) {
     console.error("Error upvoting post:", error);

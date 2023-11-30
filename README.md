@@ -1,8 +1,11 @@
-# React + Vite
+## Our website features 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- My website is more beautiful first If you are visit my website you can see the home page 
+- You can see some card .. and my website is full responsive and you can see in home page pagenination
+- in our website you can 
+- create your post
+- see another user post 
+- delete your post 
+- see comment on your post 
+- comment another user post 
+- if you  want to create more then 5 post you can get memebership 
