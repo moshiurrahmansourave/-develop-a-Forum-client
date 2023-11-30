@@ -72,11 +72,7 @@ const Dashboard = () => {
 
                 {/* shared nav link */}
                 <div className="divider"></div>
-                <li>
-                    <NavLink to="/dashboard/contact">
-                    <FaEnvelope />
-                     Contact us</NavLink>
-                </li>
+                
             </ul>
         </div>
         {/* dashboard content */}

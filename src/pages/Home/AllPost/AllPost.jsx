@@ -86,7 +86,7 @@ const AllPost = () => {
                     <input id="Search-fild" type="text"  placeholder="Type here" className="input rounded-none rounded-l-3xl text-black w-full max-w-xs" />
                     <button onClick={handleSearch} id='btn-box' className="btn rounded-none "><div className='flex gap-2'> <FaSearch></FaSearch> Search</div></button>
             </div>
-            <button className="btn btn-outline" onClick={handleSortByPopularity}>
+            <button id="btn-style" className="btn btn-outline" onClick={handleSortByPopularity}>
           Sort by Vote
         </button>
          </div>

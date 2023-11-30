@@ -18,6 +18,8 @@ import MyPost from "../pages/Dashboard/MyPost/MyPost";
 import ContactUs from "../pages/Dashboard/ContactUs/ContactUs";
 import Announcements from "../pages/Home/Announcements/Announcements";
 import PrivateRoute from "./PrivateRoute";
+import MyPostComment from "../pages/Dashboard/MyPost/MyPostComment";
+import Payment from "../pages/Membership/Payment";
 
 
 
@@ -34,6 +36,10 @@ import PrivateRoute from "./PrivateRoute";
         {
             path: '/membership',
             element: <Membership></Membership>
+        },
+        {
+          path:'payment',
+          element: <Payment></Payment>
         },
         {
           path: '/postDetails/:id',
@@ -68,6 +74,12 @@ import PrivateRoute from "./PrivateRoute";
           path:'myPost',
           element: <MyPost></MyPost>
         },
+        {
+          path:'postComments/:id',
+          element: <MyPostComment></MyPostComment>
+          
+        },
+        
         //admin routs
         {
           path: 'adminProfile',

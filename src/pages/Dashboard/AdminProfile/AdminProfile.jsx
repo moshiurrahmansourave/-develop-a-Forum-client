@@ -16,6 +16,7 @@ const AdminProfile = () => {
     });
 
 
+
     return (
         <div>
              <h2 className="text-3xl text-white ml-3 font-bold">Admin Profile</h2>
@@ -67,7 +68,7 @@ const AdminProfile = () => {
   
   <div className="stat place-items-center">
     <div className="stat-title font-bold text-xl">Comments</div>
-    <div className="stat-value">200</div>
+    <div className="stat-value">{stats.totalComment}</div>
   </div>
   
 </div>

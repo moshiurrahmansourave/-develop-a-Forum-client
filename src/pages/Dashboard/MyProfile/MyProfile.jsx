@@ -2,19 +2,33 @@
 import {  FaRegThumbsDown, FaRegThumbsUp } from "react-icons/fa";
 import useAuth from "../../../components/hooks/useAuth";
 import useMyPost from "../../../components/hooks/useMyPost";
+import useAxiosSecure from "../../../components/hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
+
 
 
 
 
 const MyProfile = () => {
-    
     const {user} = useAuth()
-   
     const [post,loading, refetch] = useMyPost()
     
+
+    
+    const axiosSecure = useAxiosSecure()
+
+   const {data: payments = []} = useQuery({
+       queryKey: ['payments', user.email],
+       queryFn: async() =>{
+           const res = await axiosSecure.get(`/payments/${user.email}`)
+           return res.data;
+       }
+   })
     
     return (
         <div>
+          <h1 className="text-2xl">Total payments: {payments.length}</h1>
             <h2 className="text-3xl text-white ml-3 font-bold">My Profile</h2>
             <div className="flex lg:flex-row flex-col gap-20  mt-20 pl-3 backdrop-blur-md bg-white/10">
             <div >
@@ -43,9 +57,22 @@ const MyProfile = () => {
             
             <div className="text-center text-white font-bold">
                 <h1>Your badges</h1>
-                <div className="">
-                <img className="rounded-full w-36" src="https://i.ibb.co/mXp01rv/Pngtree-vector-painted-silver-metallic-coins-1039920.png" alt="" />
+                <div className="flex">
+                { user ? <img className="rounded-full w-36" src="https://i.ibb.co/mXp01rv/Pngtree-vector-painted-silver-metallic-coins-1039920.png" alt="" />
+                :
+                "Your Have no reword"
+                }
+                <div>
+                 { payments.length > 0 ? 
+                 <div className="">
+                <img className="rounded-full w-36" src="https://www.onlygfx.com/wp-content/uploads/2022/04/blank-gold-badge-label-2.png" alt="" />
+                </div> 
+                 :
+                 ""
+                 }
                 </div>
+                </div>
+                
             </div>
 
         </div>

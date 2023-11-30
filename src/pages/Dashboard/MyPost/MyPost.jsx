@@ -66,7 +66,7 @@ const MyPost = () => {
                 <p className="flex gap-1 items-center "><FaRegThumbsUp className="text-2xl text-cyan-500"/> {item.up_votes_count}</p>
                  <p className="flex gap-1 items-center pt-2"><FaRegThumbsDown className="text-2xl text-cyan-500"/> {item.down_votes_count}</p>
                 </div>
-                 <Link>
+                 <Link to={`/dashboard/postComments/${item._id}`}>
                  <p className="items-center flex gap-2 text-xl btn btn-sm bg-cyan-400 text-white border-none">comments <FaCommentDots /></p>
                  </Link>
                 </div>

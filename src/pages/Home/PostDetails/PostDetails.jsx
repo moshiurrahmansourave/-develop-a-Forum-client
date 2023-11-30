@@ -1,27 +1,35 @@
 import axios from "axios";
-import { useState } from "react";
-import { FaShare, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import { FaCommentDots, FaShare, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../../../components/hooks/useAuth";
+import useAxiosSecure from "../../../components/hooks/useAxiosSecure";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { FacebookShareButton } from "react-share";
 
 
 
 
 const PostDetails = () => {
-  const [disabledButtons, setDisabledButtons] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisLiked, setDisIsLiked] = useState(false);
+
+  //for comment
+  const axiosSecure = useAxiosSecure()
+  const {user} = useContext(AuthContext)
+  console.log(user)
+  // for comment end
 
     const detailsData = useLoaderData()
-    const {author_name, post_image, author_image, post_title, description, time, comments_count, votes_count,_id} = detailsData;
+    const {author_name, post_image, author_image, post_title, description, time, _id} = detailsData;
 
 
 //like related work mama
 
 
 const handleLike = async (id) => {
-
-  if (!disabledButtons.includes(id)) {
-    setDisabledButtons([...disabledButtons, id]);
-  }
-
+  setIsLiked(true);
   console.log(id);
   try {
     await axios.put(`http://localhost:5001/UpVote/${id}`);
@@ -30,7 +38,10 @@ const handleLike = async (id) => {
     console.error("Error upvoting post:", error);
   }
 };
+
+
 const handleDisLike = async (id) => {
+  setDisIsLiked(true);
   console.log(id);
   try {
     await axios.put(`http://localhost:5001/downVote/${id}`);
@@ -38,6 +49,39 @@ const handleDisLike = async (id) => {
   } catch (error) {
     console.error("Error upvoting post:", error);
   }
+};
+
+
+const handleComment = async (e, id) => {
+  console.log(id);
+  e.preventDefault();
+  document.getElementById("my_modal_1").close();
+
+  const commentText = e.target.comment.value;
+  console.log(commentText);
+
+  const myComment = {
+    postId: id,
+    email: user.email,
+    name: user.displayName,
+    comment: commentText,
+  };
+
+  const res = await axiosSecure.post("/comment", myComment).then((res) => {
+    console.log(res.data);
+    if (res.data?.insertedId) {
+      // customRefetch();
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+
+  console.log(res.data);
 };
 
 
@@ -74,16 +118,29 @@ const handleDisLike = async (id) => {
                         
                         <div className="flex gap-5 mt-7">
 
-                        <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>comment</button>
+                        <div
+              onClick={() => document.getElementById("my_modal_1").showModal()}
+              className="btn text-lg flex"
+            >
+             <FaCommentDots />
+              <h2 className="">Comment</h2>
+            </div>
+
 <dialog id="my_modal_1" className="modal text-black">
   <div className="modal-box">
-  <form className="form-control w-full max-w-xs">
-  <label className="label">
-    <span className="label-text">Write your comment</span>
-  </label>
-  <textarea name="comment" className="textarea textarea-bordered" placeholder="comment hare"></textarea>
-  <button className="btn mt-3 bg-teal-600">Send</button>
-</form>
+  <form
+            className="modal-action flex  flex-col  mx-auto"
+            onSubmit={(e) => handleComment(e,_id)}
+          >
+            <textarea
+              name="comment"
+              className="textarea w-full mt-5"
+              placeholder="Comment"
+            ></textarea>
+            <div className="justify-center text-center mt-4">
+              <button className="btn bg-cyan-600 text-white text-lg"  type="submit">Send</button>
+            </div>
+          </form>
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
@@ -93,14 +150,27 @@ const handleDisLike = async (id) => {
   </div>
 </dialog>
                         
-                        {/* <button disabled={isButtonDisabled} onClick={() => handleLike(_id)} className="btn"><FaThumbsUp className="text-2xl" /></button> */}
-                        <button onClick={() => handleLike(_id)} disabled={disabledButtons.includes(1)}>
-          {disabledButtons.includes(1) ? 'Liked' : 'Like'}
-        </button>
+                        <button 
+                        onClick={() => handleLike(_id)} 
+                        className={`btn`}
+                        style={{ color: isLiked ? 'blue' : 'black' }}
+                        >
+                        <FaThumbsUp className={`text-2xl`} />
+                        </button>
 
-                        <button onClick={() => handleDisLike(_id)} className="btn"><FaThumbsDown className="text-2xl" /></button>
+                        <button
+                        onClick={() => handleDisLike(_id)} 
+                        className={`btn`}
+                        style={{ color: isDisLiked ? 'blue' : 'black' }}
+                        >
+                        <FaThumbsDown className={`text-2xl`} />
+                        </button>
 
-                        <button className="btn"><FaShare className="text-2xl" /></button>
+                        <button className=" btn-info">
+              <FacebookShareButton url={_id}>
+              <p className="btn"><FaShare className="text-2xl" /></p>
+              </FacebookShareButton>
+            </button>
                        </div>
                     </div>
                     </div>
